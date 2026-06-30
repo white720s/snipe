@@ -136,6 +136,13 @@ async function startSnipe(config) {
       const data = await api.getRecentTradeAds();
       const ads = data.trade_ads || data.ads || data.tradeAds || [];
 
+      // Log the first ad's raw structure so we can fix the field indices
+      if (ads.length > 0) {
+        console.log('getrecentads first ad raw:', JSON.stringify(ads[0]).slice(0, 500));
+      } else {
+        console.log('getrecentads full response keys:', JSON.stringify(Object.keys(data)));
+      }
+
       if (!Array.isArray(ads)) {
         console.error('snipe: unexpected getrecentads shape:', JSON.stringify(data).slice(0, 300));
         return;
