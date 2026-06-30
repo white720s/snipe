@@ -1,0 +1,13 @@
+{
+  "name": "rolisniper",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "register": "node src/register-commands.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.26.4",
+    "dotenv": "^17.4.2"
+  }
+}
